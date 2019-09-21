@@ -7,14 +7,11 @@ namespace week
     {    
         static void Main(string [] ags)
         {
-            ArrayList alt = new ArrayList();
-            alt.Add("用一生下载你");
-            alt.Add("一生所爱");
-            alt.Add("痞子");
-            Console.WriteLine("您收藏的网名有:");
-            foreach(string InternetName in alt)
+            for (int j=0;j<20;j++)
             {
-                Console.WriteLine(InternetName);
+                if ((j % 2) == 0)
+                    continue;
+                Console.WriteLine(j);
             }
             
         }
