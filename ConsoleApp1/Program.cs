@@ -7,10 +7,20 @@ namespace week
       
         static void Main(string [] ags)
         {
-            double x = 19810927.0112;
-            int y = Convert.ToInt32(x);
-            Console.WriteLine(y);
-            Console.WriteLine(x);
+            int s = 0, num = 80;
+            while(s<num)
+            {
+                s++;
+                if(s>40)
+                {
+                    break;
+                }
+                if ((s%2)==0)
+                {
+                    continue;
+                }
+                Console.WriteLine(s);
+            }
 
         }
     }
