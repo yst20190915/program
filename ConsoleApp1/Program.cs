@@ -7,21 +7,16 @@ namespace week
       
         static void Main(string [] ags)
         {
-            int s = 0, num = 80;
-            while(s<num)
+            bool term = false;
+            int[] myArry = new int[5] { 0, 1, 2, 3, 4 };
+            do
             {
-                s++;
-                if(s>40)
+                for (int i = 0; i < myArry.Length; i++)
                 {
-                    break;
+                    Console.WriteLine(myArry[i]);
                 }
-                if ((s%2)==0)
-                {
-                    continue;
-                }
-                Console.WriteLine(s);
-            }
-
+            } while (term);
+            
         }
     }
 }
