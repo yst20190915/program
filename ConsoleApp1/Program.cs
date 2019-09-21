@@ -1,21 +1,24 @@
 ﻿using System;
+using Introduction= Wrox.ProCSharp.Basics;
 
-namespace ConsoleApp1
+class Test
 {
-    class Program
+    public static int Main()
     {
-        static void Main(string[] args)
-        {
-            var name = "Bugs Bunny";
-            var age = 25;
-            var isRabbit = true;
-            Type nameType = name.GetType();
-            Type ageType = age.GetType();
-            Type isRabbitType = isRabbit.GetType();
-            Console.WriteLine("name is type " + nameType.ToString());
-            Console.WriteLine("age is type " + ageType.ToString());
-            Console.WriteLine("israbbit is type " + isRabbitType.ToString());
+        Introduction::NamespaceExample NSEx = new Introduction::NamespaceExample();//名称空间别名修饰符为：：
+        Console.WriteLine(NSEx.GetNamespace());
+        return 0;
+    }
+}
 
+namespace Wrox.ProCSharp.Basics
+{
+   class NamespaceExample
+    {
+        public string GetNamespace()
+        {
+            return this.GetType().Namespace;//用以访问表示类的类型的TYpe对象
         }
     }
 }
+
