@@ -1,23 +1,27 @@
 ﻿using System;
-using Introduction= Wrox.ProCSharp.Basics;
-
-class Test
+namespace ConsoleApplication1
 {
-    public static int Main()
+    class Program
     {
-        Introduction::NamespaceExample NSEx = new Introduction::NamespaceExample();//名称空间别名修饰符为：：
-        Console.WriteLine(NSEx.GetNamespace());
-        return 0;
-    }
-}
-
-namespace Wrox.ProCSharp.Basics
-{
-   class NamespaceExample
-    {
-        public string GetNamespace()
+        static void Main(string[] args)
         {
-            return this.GetType().Namespace;//用以访问表示类的类型的TYpe对象
+            RederenceAndValue.Demonstration();
+
+        }
+    }
+    public  class stamp
+    {
+        public string Name { get; set; }
+        public int Age { get; set; }
+    }
+    public static class RederenceAndValue
+    {
+        public static void Demonstration()
+        {
+            stamp Stamp_1 = new stamp { Name = "john", Age = 25 };//实例化  
+            Console.WriteLine("Name:{0} ,Age:{1} ",Stamp_1.Name,Stamp_1.Age);
+
+
         }
     }
 }
