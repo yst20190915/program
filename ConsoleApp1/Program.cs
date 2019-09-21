@@ -1,28 +1,17 @@
 ﻿using System;
-namespace ConsoleApplication1
+
+namespace week
 {
     class Program
     {
-        static void Main(string[] args)
+      
+        static void Main(string [] ags)
         {
-            RederenceAndValue.Demonstration();
-
-        }
-    }
-    public  class stamp
-    {
-        public string Name { get; set; }
-        public int Age { get; set; }
-    }
-    public static class RederenceAndValue
-    {
-        public static void Demonstration()
-        {
-            stamp Stamp_1 = new stamp { Name = "john", Age = 25 };//实例化  
-            Console.WriteLine("Name:{0} ,Age:{1} ",Stamp_1.Name,Stamp_1.Age);
-
+            double x = 19810927.0112;
+            int y = Convert.ToInt32(x);
+            Console.WriteLine(y);
+            Console.WriteLine(x);
 
         }
     }
 }
-
