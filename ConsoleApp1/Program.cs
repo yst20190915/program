@@ -1,21 +1,21 @@
 ﻿using System;
+using System.Collections;
 
 namespace week
 {
     class Program
-    {
-      
+    {    
         static void Main(string [] ags)
         {
-            bool term = false;
-            int[] myArry = new int[5] { 0, 1, 2, 3, 4 };
-            do
+            ArrayList alt = new ArrayList();
+            alt.Add("用一生下载你");
+            alt.Add("一生所爱");
+            alt.Add("痞子");
+            Console.WriteLine("您收藏的网名有:");
+            foreach(string InternetName in alt)
             {
-                for (int i = 0; i < myArry.Length; i++)
-                {
-                    Console.WriteLine(myArry[i]);
-                }
-            } while (term);
+                Console.WriteLine(InternetName);
+            }
             
         }
     }
