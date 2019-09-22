@@ -1,32 +1,27 @@
 ﻿using System;
 using System.Collections;
+using System.Drawing;
 
-namespace week
+namespace Worx.ProCSharp.StaticConstructorSample
 {
-    class Program
-    {    
-        static void Main(string [] ags)
+     public  class UserPreferences
+    {
+        public static readonly Color BackColor;
+        static  UserPreferences()
         {
-            Console.WriteLine("请输入要查找的文字:");
-            string inputstr = Console.ReadLine();
-            string[] mystr = new string[3];
-            mystr[0] = "你";
-            mystr[1] = "好";
-            mystr[2] = "呀";
-            for(int i=0;i<mystr.Length;i++)
-            {
-                if (mystr [i].Equals(inputstr))
-                {
-                    goto Found;
-                }
-                 
-            }
-            Console.WriteLine("您查找的{0}不存在", inputstr);
-            goto Finish;
-        Found:
-            Console.WriteLine("您查找的{0}存在", inputstr);
-        Finish:
-            Console.WriteLine("查找完毕");
+            DateTime now = DateTime.Now;
+            if (now.DayOfWeek == DayOfWeek.Saturday || now.DayOfWeek == DayOfWeek.Sunday)
+                BackColor = Color.Green;
+            else
+                BackColor = Color.Red;
+        }
+       
+    }
+    class MainENtryPoint
+    {
+        static void Main(string [] args)
+        {
+            Console.WriteLine("User-preferences:BackColor is {0} ", UserPreferences.BackColor.ToString());
         }
     }
 }
