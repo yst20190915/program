@@ -2,19 +2,30 @@
 
 namespace Worx
 {
-    struct house
+    abstract class GenericCustomer//抽象函数
     {
-        public double length;
-        public double wieth;
-    }
-    class MainENtryPoint
-    {
-        static void Main(string [] args)
+        private string name;
+        public GenericCustomer ()
         {
-            house home;
-            home.length = 2.2;
-            home.wieth = 2.3;
-            Console.WriteLine("house'square:{0}", home.wieth * home.length);
+            name = "<no name>";
+        }
+       
+    }
+    class Nevermore60Customer:GenericCustomer //派生类
+    {
+        private int highCostMinutesUsed;
+    }
+
+    class A
+    {
+        static  void Main()
+        {
+            GenericCustomer customer = new Nevermore60Customer();
+
+
+            
         }
     }
 }
+
+
