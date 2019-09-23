@@ -1,27 +1,20 @@
 ﻿using System;
-using System.Collections;
-using System.Drawing;
 
-namespace Worx.ProCSharp.StaticConstructorSample
+namespace Worx
 {
-     public  class UserPreferences
+    struct house
     {
-        public static readonly Color BackColor;
-        static  UserPreferences()
-        {
-            DateTime now = DateTime.Now;
-            if (now.DayOfWeek == DayOfWeek.Saturday || now.DayOfWeek == DayOfWeek.Sunday)
-                BackColor = Color.Green;
-            else
-                BackColor = Color.Red;
-        }
-       
+        public double length;
+        public double wieth;
     }
     class MainENtryPoint
     {
         static void Main(string [] args)
         {
-            Console.WriteLine("User-preferences:BackColor is {0} ", UserPreferences.BackColor.ToString());
+            house home;
+            home.length = 2.2;
+            home.wieth = 2.3;
+            Console.WriteLine("house'square:{0}", home.wieth * home.length);
         }
     }
 }
