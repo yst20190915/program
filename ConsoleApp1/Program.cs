@@ -1,33 +1,32 @@
 ﻿using System;
 
+
 namespace Worx
 {
-    abstract class GenericCustomer//抽象函数
+    /// <summary>
+    /// Worx.Math class.
+    /// provides a method to add two integers.
+    /// </summary>
+    public class MathLib
     {
-        private string name;
-        public  GenericCustomer (string name)
+        ///<summary>
+        ///The Add method allows us to add two integers
+        ///</summary>
+        ///<returns>Result of the addition (int)</returns>
+        ///<param name="x">First number to add</param>
+        ///<param name="y">second number to add</param>
+        public int Add(int x,int y)
         {
-            this.name = name;
+            return x + y;
         }
+    }
        
-    }
-    class Nevermore60Customer:GenericCustomer //派生类
-    {
-        public Nevermore60Customer (string name,string referrerName)
-            :base (name )
-        {
-            this.referrerName = referrerName;
-        }
-        private string referrerName;
-        private uint highCostMinutesUsed;
-    }
 
     class A
     {
         static  void Main()
         {
-            GenericCustomer customer = new Nevermore60Customer("Jack","Jone");
-
+           
 
             
         }
