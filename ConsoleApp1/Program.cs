@@ -1,21 +1,31 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 
 namespace Wrox.ProCSharp
 {
        public  class A
-    {
+      {
           public static void Main()
-       {
-         var list = new ArrayList();
-        list.Add(44);
-        int i1 = (int)list[0];
-        foreach (int i2 in list )
+          {
+            var list = new List<int>();
+            list.Add(44);
+            var stringlist = new List<string>();
+            stringlist.Add("mystring");
+            var myClassList = new List<MyClass>();
+            myClassList.Add(new MyClass());
+            int i1 = (int)list[0];
+            foreach (int i in list )
+            {
+              Console.WriteLine(i);
+            }
+           }
+        public class MyClass
         {
-            Console.WriteLine(i2);
+            string name;
+
         }
-    }
-    }
+       }
 
    
   
