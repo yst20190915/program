@@ -1,36 +1,52 @@
 ﻿using System;
 
 
-namespace Worx
+namespace Worx.ProCSharp
 {
-    /// <summary>
-    /// Worx.Math class.
-    /// provides a method to add two integers.
-    /// </summary>
-    public class MathLib
+    
+    public interface IBankAccount//接口
     {
-        ///<summary>
-        ///The Add method allows us to add two integers
-        ///</summary>
-        ///<returns>Result of the addition (int)</returns>
-        ///<param name="x">First number to add</param>
-        ///<param name="y">second number to add</param>
-        public int Add(int x,int y)
-        {
-            return x + y;
-        }
-    }
+        void PayIn(decimal amount);
+        bool Withdraw(decimal amount);
+        decimal Balance { get; }
        
+    }   
+}
 
-    class A
+namespace Worx.ProCSharp .VenusBank
+{
+    public class SaverAccount:IBankAccount
     {
-        static  void Main()
+        private decimal balance;
+        public void PayIn(decimal amount)
         {
-           
-
+            balance += amount;
+        }
+        public bool Withdraw(decimal amount)
+        {
+            if (balance >=amount )
+            {
+                balance -= amount;
+                return true;
+            }
+            Console.WriteLine("Withdrawal attempt failed.");
+            return false;
+        }
+        public decimal Balance
+        {
+            get
+            {
+                return balance;
+            }
+        }
+        public override string ToString()
+        {
+            return String.Format("Venus Bank Saver:Balance=(0,6:C)", balance);
+        }
+        public static void Main()
+        {
+            string account = Console.ReadLine();
             
         }
     }
 }
-
-
